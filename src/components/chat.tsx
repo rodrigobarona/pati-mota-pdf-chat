@@ -41,7 +41,7 @@ export function Chat({ sessionId, isUploading }: ChatProps) {
       <form onSubmit={handleSubmit} className="p-4 flex clear-both">
         <Input
           value={input}
-          placeholder={"Type to chat with AI..."}
+          placeholder={"Type to chat with my research assistant..."}
           onChange={handleInputChange}
           style={isUploading ? { pointerEvents: "none" } : {}}
           className="mr-2"

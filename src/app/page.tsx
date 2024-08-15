@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main className="relative container flex min-h-screen flex-col">
       <h1 className="text-3xl font-bold text-center py-4">
-        Secure AI PDF Chat
+        Patrícia Mota, PhD, PT - Research Assistant
       </h1>
       <DropZone
         onFileChange={onFileChange}
