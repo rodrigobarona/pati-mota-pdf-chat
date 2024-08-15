@@ -23,7 +23,7 @@ class Pinecone {
 
       if (!existingIndexNames.includes(this.indexName)) {
         logger.info(
-          `Pinecone index name: ${this.indexName} does not exist. Creating index...`,
+          `Pinecone index name: ${this.indexName} does not exist. Creating index...`
         );
         await this.createIndex(this.indexName);
       } else {
@@ -41,7 +41,7 @@ class Pinecone {
     try {
       const indexCreated = await this.client.createIndex({
         name: indexName,
-        dimension: 1536,
+        dimension: 3072,
         metric: "cosine",
         spec: {
           serverless: {
@@ -52,11 +52,11 @@ class Pinecone {
       });
 
       logger.info(
-        `Waiting for ${env.INDEX_INIT_TIMEOUT} seconds for index : ${indexName} initializing to complete...`,
+        `Waiting for ${env.INDEX_INIT_TIMEOUT} seconds for index : ${indexName} initializing to complete...`
       );
       await delay(Number(env.INDEX_INIT_TIMEOUT));
       logger.info(
-        `Index : ${indexName} initialized successfully. indexCreated: ${indexCreated}`,
+        `Index : ${indexName} initialized successfully. indexCreated: ${indexCreated}`
       );
       return indexCreated;
     } catch (error) {
