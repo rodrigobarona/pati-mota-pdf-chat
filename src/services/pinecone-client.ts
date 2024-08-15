@@ -41,7 +41,7 @@ class Pinecone {
     try {
       const indexCreated = await this.client.createIndex({
         name: indexName,
-        dimension: 3072,
+        dimension: 1536,
         metric: "cosine",
         spec: {
           serverless: {
