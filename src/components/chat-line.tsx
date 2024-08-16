@@ -19,10 +19,9 @@ import Balancer from "react-wrap-balancer";
 
 const convertNewLines = (text: string) =>
   text.split("\n").map((line, i) => (
-    <span key={`${i}-${line}`}>
+    <ReactMarkdown key={`${i}-${line}`} className="prose  max-w-none">
       {line}
-      <br />
-    </span>
+    </ReactMarkdown>
   ));
 
 interface ChatLineProps extends Partial<Message> {
@@ -53,7 +52,7 @@ export function ChatLine({
             {role === "assistant" ? "Research Assistant" : "You"}
           </CardTitle>
         </CardHeader>
-        <CardContent className="text-sm">
+        <CardContent className="text-base">
           <Balancer>{formattedMessage}</Balancer>
         </CardContent>
         <CardFooter>
